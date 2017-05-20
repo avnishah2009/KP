@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% comment  %}{% extends "base.html" %}
+{% block body %}
+    <div class="row">
+    {% for store in stores %}
+        <div class="col-md-6">
+           <a href="/khaana-peena/store_details/{{ store.name }}">{{ store }}</a>
+        </div>
+        <div class="col-md-3">
+            {{ store.location }}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+{% endcomment %}
+
+{% load render_bundle from webpack_loader %}
+
+{% comment  %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Store List in React</title>
+
+
+</head>
+
+<body>
+{% endcomment  %}
+{% block body %}
+  <div id="container">
+
+  </div>
+{% render_bundle 'main' %}
+{%  endblock %}
+{% comment  %}
+</body>
+
+</html>
+{% endcomment %}

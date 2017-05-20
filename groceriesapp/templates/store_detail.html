@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="row">
+    {% for item in trip_items %}
+        <div class="col-md-1">{{ forloop.counter }}</div>
+        <div class="col-md-7">{{ item.item.name }}</div>
+        <div class="col-md-4">{{ item.item.price_per_unit }}</div>
+    {% endfor %}
+    </div>
+{% endblock %}

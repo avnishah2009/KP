@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+    All your shopping trips listed here for easy access.
+    <div class="row">
+        {% for item in trips %}
+            <div class="col-md-6">{{ item.store.name  }}</div>
+            <div class="col-md-6">{{ item.date }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}

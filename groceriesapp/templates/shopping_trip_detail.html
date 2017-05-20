@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="page-header">
+        <h2>Here is a list of all items purchased in a single shopping trip</h2>
+    </div>
+    <div class="row"></div>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>Price per unit</td>
+            <td>Unit</td>
+            <td>Quantity</td>
+            <td>Total Price</td>
+        </tr>
+    </thead>
+{% for item in trip_items %}
+<tr>
+<td class="col-md-1">{{ forloop.counter }}</td>
+    <td class="col-md-2">{{ item.item.name }}</td>
+    <td class="col-md-2">{{ item.item.price_per_unit }} </td>
+    <td class="col-md-2">{{ item.item.unit }}</td>
+    <td class="col-md-2"> <i>{{ item.quantity }}</i></td>
+    <td class="col-md-2">{% widthratio item.item.price_per_unit 1 item.quantity %}</td>
+
+</tr>
+{% endfor %}
+    </table>
+{% endblock %}
