@@ -1,0 +1,8 @@
+node_modules/
+grocery-project/
+.DS_Store
+.idea/
+webpack-stats.json
+db.sqlite3
+assets/bundles/
+*.pyc
